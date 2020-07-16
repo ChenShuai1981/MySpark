@@ -1,5 +1,7 @@
 package delta
 
+import io.delta.tables.DeltaTable
+import org.apache.spark.sql.functions._
 import org.apache.spark.sql.SparkSession
 
 // https://mungingdata.com/delta-lake/merge-update-upserts/
@@ -25,7 +27,7 @@ object DeltaMerge extends App {
   /** read delta table **/
 //  val path = new java.io.File("./tmp/event_delta_lake/").getCanonicalPath
 //  val df = spark.read.format("delta").load(path)
-//  df.show()
+//  df.show(false)
 
   /** fix typo clck -> click **/
 //  val path = new java.io.File("./tmp/event_delta_lake/").getCanonicalPath
@@ -40,9 +42,11 @@ object DeltaMerge extends App {
 //    col("eventType") === "clck",
 //    Map("eventType" -> lit("click"))
 //  )
+//
+//  spark.read.format("delta").load(path).show(false)
 
   /** read parquet file directly **/
-  val path = new java.io.File("./tmp/event_delta_lake/part-00000-32a4ffa5-0980-4d45-aab5-16b5682c6d27-c000.snappy.parquet").getCanonicalPath
+  val path = new java.io.File("./tmp/event_delta_lake/part-00000-28e15da4-9a70-4c8e-991e-a31d9a9d5316-c000.snappy.parquet").getCanonicalPath
   val df = spark.read.parquet(path)
-  df.show()
+  df.show(false)
 }

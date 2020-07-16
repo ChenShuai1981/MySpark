@@ -61,22 +61,22 @@
       <artifactId>spark-avro_${scala.version}</artifactId>
       <version>${spark.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-hive_${scala.version}</artifactId>
-      <version>${spark.version}</version>
-    </dependency>
-<!--    <dependency>-->
-<!--      <groupId>com.databricks</groupId>-->
-<!--      <artifactId>spark-avro_${scala.version}</artifactId>-->
-<!--      <version>4.0.0</version>-->
-<!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.apache.spark</groupId>-->
+    <!--      <artifactId>spark-hive_${scala.version}</artifactId>-->
+    <!--      <version>${spark.version}</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>com.databricks</groupId>-->
+    <!--      <artifactId>spark-avro_${scala.version}</artifactId>-->
+    <!--      <version>4.0.0</version>-->
+    <!--    </dependency>-->
 
-    <dependency>
-      <groupId>org.mongodb.spark</groupId>
-      <artifactId>mongo-spark-connector_${scala.version}</artifactId>
-      <version>2.4.1</version> <!-- 2.2.0会有Mongo游标异常的bug-->
-    </dependency>
+    <!--    <dependency>-->
+    <!--      <groupId>org.mongodb.spark</groupId>-->
+    <!--      <artifactId>mongo-spark-connector_${scala.version}</artifactId>-->
+    <!--      <version>2.4.1</version> &lt;!&ndash; 2.2.0会有Mongo游标异常的bug&ndash;&gt;-->
+    <!--    </dependency>-->
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-core_${scala.version}</artifactId>
@@ -100,39 +100,39 @@
       <version>0.35.0-s_${scala.version}</version>
     </dependency>
 
-<!--    <dependency>-->
-<!--      <groupId>com.uber.hoodie</groupId>-->
-<!--      <artifactId>hoodie-common</artifactId>-->
-<!--      <version>${hudi.version}</version>-->
-<!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>com.uber.hoodie</groupId>-->
+    <!--      <artifactId>hoodie-common</artifactId>-->
+    <!--      <version>${hudi.version}</version>-->
+    <!--    </dependency>-->
 
-<!--    <dependency>-->
-<!--      <groupId>com.uber.hoodie</groupId>-->
-<!--      <artifactId>hoodie-hadoop-mr</artifactId>-->
-<!--      <version>${hudi.version}</version>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>com.uber.hoodie</groupId>-->
-<!--      <artifactId>hoodie-spark</artifactId>-->
-<!--      <version>${hudi.version}</version>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>com.uber.hoodie</groupId>-->
-<!--      <artifactId>hoodie-hive</artifactId>-->
-<!--      <version>${hudi.version}</version>-->
-<!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>com.uber.hoodie</groupId>-->
+    <!--      <artifactId>hoodie-hadoop-mr</artifactId>-->
+    <!--      <version>${hudi.version}</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>com.uber.hoodie</groupId>-->
+    <!--      <artifactId>hoodie-spark</artifactId>-->
+    <!--      <version>${hudi.version}</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>com.uber.hoodie</groupId>-->
+    <!--      <artifactId>hoodie-hive</artifactId>-->
+    <!--      <version>${hudi.version}</version>-->
+    <!--    </dependency>-->
 
-<!--    <dependency>-->
-<!--      <groupId>com.uber.hoodie</groupId>-->
-<!--      <artifactId>hoodie-client</artifactId>-->
-<!--      <version>${hudi.version}</version>-->
-<!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>com.uber.hoodie</groupId>-->
+    <!--      <artifactId>hoodie-client</artifactId>-->
+    <!--      <version>${hudi.version}</version>-->
+    <!--    </dependency>-->
 
-<!--    <dependency>-->
-<!--      <groupId>org.apache.avro</groupId>-->
-<!--      <artifactId>avro</artifactId>-->
-<!--      <version>1.7.7</version>-->
-<!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.apache.avro</groupId>-->
+    <!--      <artifactId>avro</artifactId>-->
+    <!--      <version>1.7.7</version>-->
+    <!--    </dependency>-->
     <!--<dependency>-->
     <!--<groupId>org.apache.parquet</groupId>-->
     <!--<artifactId>parquet-avro</artifactId>-->
@@ -144,17 +144,17 @@
     <!--</exclusion>-->
     <!--</exclusions>-->
     <!--</dependency>-->
-    <!--<dependency>-->
-    <!--<groupId>org.apache.parquet</groupId>-->
-    <!--<artifactId>parquet-hadoop</artifactId>-->
-    <!--<version>${parquet.version}</version>-->
-    <!--<exclusions>-->
-    <!--<exclusion>-->
-    <!--<artifactId>parquet-column</artifactId>-->
-    <!--<groupId>org.apache.parquet</groupId>-->
-    <!--</exclusion>-->
-    <!--</exclusions>-->
-    <!--</dependency>-->
+    <dependency>
+      <groupId>org.apache.parquet</groupId>
+      <artifactId>parquet-hadoop</artifactId>
+      <version>${parquet.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>parquet-column</artifactId>
+          <groupId>org.apache.parquet</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-streaming_${scala.version}</artifactId>
@@ -170,22 +170,22 @@
       <artifactId>spark-sql-kafka-0-10_${scala.version}</artifactId>
       <version>${spark.version}</version>
     </dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.62</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hive</groupId>
-      <artifactId>hive-jdbc</artifactId>
-      <version>2.3.4</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.apache.parquet</groupId>
-          <artifactId>parquet-hadoop-bundle</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
+    <!--    <dependency>-->
+    <!--      <groupId>com.alibaba</groupId>-->
+    <!--      <artifactId>fastjson</artifactId>-->
+    <!--      <version>1.2.62</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.apache.hive</groupId>-->
+    <!--      <artifactId>hive-jdbc</artifactId>-->
+    <!--      <version>2.3.4</version>-->
+    <!--      <exclusions>-->
+    <!--        <exclusion>-->
+    <!--          <groupId>org.apache.parquet</groupId>-->
+    <!--          <artifactId>parquet-hadoop-bundle</artifactId>-->
+    <!--        </exclusion>-->
+    <!--      </exclusions>-->
+    <!--    </dependency>-->
 
     <dependency>
       <groupId>org.apache.hadoop</groupId>
@@ -193,11 +193,11 @@
       <version>2.7.3</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.apache.hive</groupId>
-      <artifactId>hive-jdbc</artifactId>
-      <version>2.3.4</version>
-    </dependency>
+    <!--    <dependency>-->
+    <!--      <groupId>org.apache.hive</groupId>-->
+    <!--      <artifactId>hive-jdbc</artifactId>-->
+    <!--      <version>2.3.4</version>-->
+    <!--    </dependency>-->
 
     <dependency>
       <groupId>org.apache.hudi</groupId>
@@ -245,21 +245,21 @@
     <dependency>
       <groupId>org.apache.parquet</groupId>
       <artifactId>parquet-hadoop</artifactId>
-      <version>1.10.1</version>
+      <version>${parquet.version}</version>
     </dependency>
 
     <!-- Avro -->
-    <dependency>
-      <groupId>org.apache.avro</groupId>
-      <artifactId>avro</artifactId>
-      <version>1.8.2</version>
-    </dependency>
+    <!--    <dependency>-->
+    <!--      <groupId>org.apache.avro</groupId>-->
+    <!--      <artifactId>avro</artifactId>-->
+    <!--      <version>1.8.2</version>-->
+    <!--    </dependency>-->
 
-    <dependency>
-      <groupId>org.apache.parquet</groupId>
-      <artifactId>parquet-avro</artifactId>
-      <version>1.10.1</version>
-    </dependency>
+    <!--    <dependency>-->
+    <!--      <groupId>org.apache.parquet</groupId>-->
+    <!--      <artifactId>parquet-avro</artifactId>-->
+    <!--      <version>${parquet.version}</version>-->
+    <!--    </dependency>-->
 
     <!--  Hive  -->
     <dependency>

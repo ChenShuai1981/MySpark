@@ -15,7 +15,7 @@ case class MySQLSourceReader(options: Map[String, String]) extends DataSourceRea
 
   val supportedFilters: ArrayBuffer[Filter] = ArrayBuffer[Filter]()
 
-  val requiredSchema: StructType = {
+  var requiredSchema: StructType = {
     val jdbcOptions = new JDBCOptions(options)
     JDBCRDD.resolveTable(jdbcOptions)
   }
