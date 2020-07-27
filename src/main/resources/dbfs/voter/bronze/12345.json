@@ -1,0 +1,3 @@
+{"payload": {"op": "u","ts_ms": 1486500580000,"source": { "db": "some-db", "table": "some-table" }, "before": { "id": "2", "name": "Dany", "address": "Jerusalem" }, "after": { "id": "2", "name": "Dany", "address": "Tel Aviv" }}}
+{"payload": {"op": "d", "ts_ms": 1486500570000, "source": { "db": "some-db", "table": "some-table" }, "before": { "id": "3", "name": "Avi", "address": "Eilat" }, "after": null}}
+{"payload": {"op": "u", "ts_ms": 1486500550000, "source": { "db": "some-db", "table": "some-table" }, "before": { "id": "3", "name": "Avi", "address": "Eilat" }, "after": { "id": "3", "name": "Avi", "address": "Golan" }}}

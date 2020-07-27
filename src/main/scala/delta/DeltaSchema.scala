@@ -11,6 +11,7 @@ object DeltaSchema extends App {
     .config("spark.databricks.delta.retentionDurationCheck.enabled", "false")
     .getOrCreate()
 
+  val parquetPath = new java.io.File("./tmp/parquet_schema/").getCanonicalPath
 
 //  val df = spark.createDF(
 //    List(
@@ -22,12 +23,10 @@ object DeltaSchema extends App {
 //    )
 //  )
 //
-  val parquetPath = new java.io.File("./tmp/parquet_schema/").getCanonicalPath
-//
 //  df.write.parquet(parquetPath)
 //
 //  spark.read.parquet(parquetPath).show()
-//
+
 //  val df2 = spark.createDF(
 //    List(
 //      88,
@@ -38,6 +37,14 @@ object DeltaSchema extends App {
 //  )
 //
 //  df2.write.mode("append").parquet(parquetPath)
+//
+//  spark.read.parquet(parquetPath).show()
+
+  /**
+    * Delta automatic schema updates
+    */
+
+  val deltaPath = new java.io.File("./tmp/schema_example/").getCanonicalPath
 
 //  val df = spark.createDF(
 //    List(
@@ -49,10 +56,8 @@ object DeltaSchema extends App {
 //    )
 //  )
 //
-  val deltaPath = new java.io.File("./tmp/schema_example/").getCanonicalPath
-//
 //  df.write.format("delta").save(deltaPath)
-
+//
 //  val df2 = spark.createDF(
 //    List(
 //      88,
@@ -74,7 +79,12 @@ object DeltaSchema extends App {
 //  )
 //
 //  df3.write.format("delta").mode("append").save(deltaPath)
+//
+//  spark.read.format("delta").load(deltaPath).show()
 
+  /**
+    * Merge schema
+    */
 //  val df4 = spark.createDF(
 //    List(
 //      (7, 7, 7),
@@ -86,9 +96,35 @@ object DeltaSchema extends App {
 //    )
 //  )
 //
-//  df4.write.format("delta").mode("append")
-//    .option("mergeSchema", "true").save(deltaPath)
+//  df4.write.format("delta")
+//    .mode("append")
+//    .option("mergeSchema", "true")
+//    .save(deltaPath)
 
+  /**
+    * Replace table schema
+    */
+
+//    val df5 = spark.createDF(
+//    List(
+//      ("nice", "person"),
+//      ("like", "madrid")
+//    ), List(
+//      ("word1", StringType, true),
+//      ("word2", StringType, true)
+//    )
+//  )
+//
+//  df5
+//    .write
+//    .format("delta")
+//    .mode("append")
+//    .option("mergeSchema", "true")
+//    .save(deltaPath)
+
+  /**
+    * overwriteSchema
+    */
   val df5 = spark.createDF(
     List(
       ("nice", "person"),
@@ -98,15 +134,14 @@ object DeltaSchema extends App {
       ("word2", StringType, true)
     )
   )
+//
+//  df5
+//    .write
+//    .format("delta")
+//    .mode("overwrite") // -> 区别
+//    .option("overwriteSchema", "true") // -> 区别
+//    .save(deltaPath)
 
-  df5
-    .write
-    .format("delta")
-//    .mode("append")
-    .mode("overwrite")
-//    .option("mergeSchema", "true")
-    .option("overwriteSchema", "true")
-    .save(deltaPath)
 
   spark.read.format("delta").load(deltaPath).show()
 }
