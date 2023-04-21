@@ -9,7 +9,7 @@
   <version>1.0-SNAPSHOT</version>
   <properties>
     <scala.version>2.12</scala.version>
-    <spark.version>3.0.0</spark.version>
+    <spark.version>3.4.0</spark.version>
     <parquet.version>1.10.1</parquet.version>
 <!--    <hudi.version>0.5.3</hudi.version>-->
     <delta.version>0.7.0</delta.version>
